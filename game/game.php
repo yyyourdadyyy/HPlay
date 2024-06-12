@@ -85,7 +85,7 @@ $items = generateItems();
                     if (!$isUserLoggedIn) {
                 echo '<a href="login.php" class="login-button">Войти</a>';
             }else {
-                echo '<a href="logout.php" class="login-button">Выйти</a>';
+                echo '<a href="../auth/logout.php" class="login-button">Выйти</a>';
             }
             ?>
                     </div>
