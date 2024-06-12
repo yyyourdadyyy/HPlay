@@ -215,6 +215,51 @@ a {
     position: relative;
 }
 
+.pers-main-mobilu {
+    display: none;
+}
+
+.mobilu-cards {
+    display: none;
+    padding: 0px 15px 119px 15px;
+}
+
+.title-main-mobilu {
+    color: #875E0E;
+}
+
+.rows-card-mobilu-main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-1-main {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to right, #8CB8A8, #8cb8a844);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.card-1-main img {
+    max-width: 150px;
+}
+
+.card-1-main {
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.card-2-main {
+    background: linear-gradient(to right, #FBAE17, #fbaf1721);
+}
+
+.card-2-main img {
+    transform: rotate(217deg);
+}
+
 /* login page */
 
 .login-rows {
@@ -383,7 +428,6 @@ a {
     background: linear-gradient(to bottom, #00D1FF, white);
     padding: 20px;
     text-align: center;
-    min-width: 408px;
 }
 
 .item5 {
