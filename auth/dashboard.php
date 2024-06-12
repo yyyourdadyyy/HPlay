@@ -1,8 +1,10 @@
 <?php
-require 'db.php';
-
 session_start();
-$isUserLoggedIn = isset($_SESSION['user_name']);
+if (!isset($_SESSION['username'])) {
+    header('Location: ../login.html');
+    exit;
+}
+$isUserLoggedIn = isset($_SESSION['username']);
 ?>
 
 
@@ -26,13 +28,13 @@ $isUserLoggedIn = isset($_SESSION['user_name']);
                     <p class="logo-text">HAPPY <span>PLAYLAND</span></p>
                 </div>
                 <div class="link-nav-login">
-                    <a class="link-nav" href="metods.html">Методики</a>
-                    <a class="link-nav" href="task.html">Задания</a>
-                    <a class="link-nav " href="work.html">Работа с детьми</a>
-                    <a class="link-nav" href="cartoons.html">Мультфильмы</a>
+                    <a class="link-nav" href="../metods.html">Методики</a>
+                    <a class="link-nav" href="../task.php">Задания</a>
+                    <a class="link-nav " href="../work.html">Работа с детьми</a>
+                    <a class="link-nav" href="../cartoons.html">Мультфильмы</a>
                     <div class="login">
                     <?php
-                    if ($isUserLoggedIn) {
+                    if (!$isUserLoggedIn) {
                 echo '<a href="login.php" class="login-button">Войти</a>';
             }else {
                 echo '<a href="logout.php" class="login-button">Выйти</a>';

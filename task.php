@@ -1,3 +1,13 @@
+<?php
+
+
+session_start();
+if (!isset($_SESSION['username'])) {
+    header('Location: login.html');
+    exit;
+}
+$isUserLoggedIn = isset($_SESSION['username']);
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -24,7 +34,13 @@
                     <a class="link-nav" href="work.html">Работа с детьми</a>
                     <a class="link-nav" href="cartoons.html">Мультфильмы</a>
                     <div class="login">
-                        <a href="#">Войти</a>
+                    <?php
+                    if (!$isUserLoggedIn) {
+                echo '<a href="login.php" class="login-button">Войти</a>';
+            }else {
+                echo '<a href="logout.php" class="login-button">Выйти</a>';
+            }
+            ?>
                     </div>
                 </div>
             </nav>
@@ -37,7 +53,7 @@
             <div class="card-task">
                 <p class="title-card-task">Выбери одинаковые предметы</p>
                 <img class="card-img-one" src="img/icon-card-task(1).svg" alt="">
-                <a class="link-task" href="#">ИГРАТЬ</a>
+                <a class="link-task" href="game/game.php">ИГРАТЬ</a>
             </div>
             <div class="card-task">
                 <p class="title-card-task">Карандаши</p>
