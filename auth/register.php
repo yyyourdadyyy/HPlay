@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->getInsertedCount() == 1) {
         echo "Регистрация прошла успешно!";
-        header('Location: login.html'); // Перенаправление на страницу входа
+        header('Location: ../login.html'); // Перенаправление на страницу входа
         exit;
     } else {
         echo "Ошибка регистрации.";

@@ -55,11 +55,13 @@ $isUserLoggedIn = isset($_SESSION['username']);
         require 'db.php';
 
         // Получение всех пользователей из базы данных
-        $users = $collection->find();
+        
+        $username = $_SESSION['username'];
+        $user = $collection->findOne(['username' => $username]);
         
 
         // Вывод данных на страницу
-        foreach ($users as $user) {
+        
             $level = round((($user['expirince']-100) / 100) +1);
             echo '<div class="profile-date">';
             echo '<img src="../img/men-ava.svg" alt="Avatar">';
@@ -70,7 +72,7 @@ $isUserLoggedIn = isset($_SESSION['username']);
             echo '</div>';
             echo '</div>';
             
-        }
+        
         ?>
       </div>
       <div class="favorites-game">
