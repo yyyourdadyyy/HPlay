@@ -28,10 +28,10 @@ $isUserLoggedIn = isset($_SESSION['username']);
                     <p class="logo-text">HAPPY <span>PLAYLAND</span></p>
                 </div>
                 <div class="link-nav-login">
-                    <a class="link-nav" href="../metods.html">Методики</a>
+                    <a class="link-nav" href="../metods.php">Методики</a>
                     <a class="link-nav" href="../task.php">Задания</a>
-                    <a class="link-nav " href="../work.html">Работа с детьми</a>
-                    <a class="link-nav" href="../cartoons.html">Мультфильмы</a>
+                    <a class="link-nav " href="../work.php">Работа с детьми</a>
+                    <a class="link-nav" href="../cartoons.php">Мультфильмы</a>
                     <div class="login">
                     <?php
                     if (!$isUserLoggedIn) {

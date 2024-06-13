@@ -8,17 +8,45 @@
     <title>Регистрация HAPPY PLAYLAND</title>
 </head>
 <body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <img src="img/logo.svg" alt="Logo">
+                    <p class="logo-text">HAPPY <span>PLAYLAND</span></p>
+                </div>
+                <div class="link-nav-login">
+                    <a class="link-nav" href="metods.html">Методики</a>
+                    <a class="link-nav" href="task.html">Задания</a>
+                    <a class="link-nav" href="work.html">Работа с детьми</a>
+                    <a class="link-nav" href="cartoons.html">Мультфильмы</a>
+                </div>
+            </nav>
+        </div>
+    </header>
     <main class="main">
         <div class="container">
             <div class="rows-main login-rows">
                 <div class="login-form">
                     <h2>Регистрация</h2>
-                    <form action="auth/register.php" method="post">
+                    <!-- <form action="auth/register.php" method="post">
                         <label for="username">Логин</label>
                         <input class="input-form" type="text" name="username" id="username" required>
                         <div class="passworld-form">
                             <label for="password">Пароль</label>
                             <input class="input-form" type="password" name="password" id="password" required>
+                        </div>
+                        <div class="btn-form">
+                            <input class="btn-submit" type="submit" value="Зарегистрироваться">
+                            <a class="reg-page-link" href="login.html">Уже есть аккаунт?</a>
+                        </div>
+                    </form> -->
+                    <form action="auth/register.php" class="form-login" method="post">
+                        <label for="">Логин</label>
+                        <input class="input-form" type="text" name="username" id="username" required>
+                        <div class="passworld-form">
+                            <label for="">Пароль</label>
+                        <input class="input-form" type="password" name="password" id="password" required>
                         </div>
                         <div class="btn-form">
                             <input class="btn-submit" type="submit" value="Зарегистрироваться">

@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+$isUserLoggedIn = isset($_SESSION['username']);
+?>
+
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -6,8 +13,9 @@
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="style/media.css">
     <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <script defer src="js/app.js"></script>
-    <title>Методики</title>
+    <title>HAPPY PLAYLAND</title>
 </head>
 <body>
     <header class="header">
@@ -16,15 +24,21 @@
                 <div class="logo">
                     <img src="img/logo.svg" alt="Logo">
                     <p class="logo-text">HAPPY <span>PLAYLAND</span></p>
-                    <p class="main-text-mobilu">Методики</p>
+                    <p class="main-text-mobilu">Главная</p>
                 </div>
                 <div class="link-nav-login">
-                    <a class="link-nav active" href="metods.html">Методики</a>
+                    <a class="link-nav" href="metods.php">Методики</a>
                     <a class="link-nav" href="task.php">Задания</a>
-                    <a class="link-nav" href="work.html">Работа с детьми</a>
-                    <a class="link-nav" href="cartoons.html">Мультфильмы</a>
+                    <a class="link-nav" href="work.php">Работа с детьми</a>
+                    <a class="link-nav" href="cartoons.php">Мультфильмы</a>
                     <div class="login">
-                        <a href="#">Войти</a>
+                    <?php
+                    if (!$isUserLoggedIn) {
+                echo '<a href="login.html" class="login-button">Войти</a>';
+            }else {
+                echo '<a href="auth/dashboard.php" class="login-button">Профиль</a>';
+            }
+            ?>
                     </div>
                 </div>
             </nav>
@@ -32,32 +46,44 @@
     </header>
     <main class="main">
         <div class="container">
-            <h1 class="task-title">Методики</h1>
-            <div class="grid-container">
-                <div class="item1">
-                <img class="img-metods" src="img/icon-card-metods(2).svg.svg" alt="">
-                <p class="title-metods">Сенсорная интеграция</p>
-                <a class="link-metods" href="#">ПОДРОБНЕЕ</a>
+            <div class="rows-main">
+                <div class="text-main">
+                 <div class="text-ss">
+                    <h1 class="title-main">Привет, давай поиграем!</h1>
+                    <h2 class="decr-title-main">Я собрал для тебя много игр, можешь веселиться. Здесь ты найдешь много нового</h2>
+                    <a class="link-main" href="task.php">Играть</a>
+                 </div>
+                    <img class="pers-main-mobilu" src="img/pers(main-page).svg" alt="pers">
                 </div>
-                <div class="item2">
-                    <img class="img-metods" src="img/icon-card-metods(1).svg.svg" alt="">
-                    <p class="title-metods">Иппотерапия</p>
-                    <a class="link-metods color-orange" href="metods/horse.html">ПОДРОБНЕЕ</a>
+                <div class="img-main">
+                    <img class="pers-main" src="img/pers(main-page).svg" alt="pers">
+                    <div class="pluses-main">
+                        <div class="plus-main">
+                            <img src="img/icon1(main-page).svg" alt="game">
+                            <p>Захватывающие игры</p>
+                        </div>
+                        <div class="plus-main">
+                            <img src="img/icon2(main-page).svg" alt="game">
+                            <p>Веселые задачки</p>
+                        </div>
+                        <div class="plus-main">
+                            <img src="img/icon3(main-page).svg" alt="game">
+                            <p>Увлекательные истории</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="item3">
-                    <img class="img-metods item3-img" src="img/icon-card-metods(3).svg.svg" alt="">
-                    <p class="title-metods">Карточки PECS</p>
-                    <a class="link-metods color-green" href="metods/pecs.html">ПОДРОБНЕЕ</a>
-                </div>
-                <div class="item4">
-                    <img class="img-metods" src="img/icon-card-metods(4).svg" alt="">
-                    <p class="title-metods">Холдинг-терапия</p>
-                    <a class="link-metods" href="#">ПОДРОБНЕЕ</a>
-                </div>
-                <div class="item5">
-                    <img class="img-metods" src="img/icon-card-metods(5).svg" alt="">
-                    <p class="title-metods">АВА-терапия</p>
-                    <a class="link-metods color-pink" href="#">ПОДРОБНЕЕ</a>
+            </div>
+            <div class="mobilu-cards">
+                <h2 class="title-main-mobilu">Рекомендации</h2>
+                <div class="rows-card-mobilu-main">
+                    <div class="card-1-main">
+                        <p>Карточки PECS</p>
+                        <img src="img/icon-card-metods(3).svg.svg" alt="">
+                    </div>
+                    <div class="card-1-main card-2-main">
+                        <p>Собери пазл</p>
+                        <img src="img/icon-card-task(3).svg" alt="">
+                    </div>
                 </div>
             </div>
         </div>
@@ -66,9 +92,9 @@
         <div class="inner-menu-mobilu">
             <div class="flex-mobilu">
                 <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="img-menu active-menu" d="M11 17.4L4.4 14.1V8.09998L0.200001 5.99998L11 0.599976L21.8 5.99998V13.8H20V6.89998L17.6 8.09998V14.1L11 17.4ZM11 9.37498L17.775 5.99998L11 2.62498L4.225 5.99998L11 9.37498ZM11 15.375L15.8 12.975V8.99998L11 11.4L6.2 8.99998V12.975L11 15.375Z" fill="#D9D9D9"/>
+                    <path class="img-menu" d="M11 17.4L4.4 14.1V8.09998L0.200001 5.99998L11 0.599976L21.8 5.99998V13.8H20V6.89998L17.6 8.09998V14.1L11 17.4ZM11 9.37498L17.775 5.99998L11 2.62498L4.225 5.99998L11 9.37498ZM11 15.375L15.8 12.975V8.99998L11 11.4L6.2 8.99998V12.975L11 15.375Z" fill="#D9D9D9"/>
                     </svg>
-                <a class="link-menu active-menu" href="metods.html">Методики</a>
+                <a class="link-menu" href="metods.html">Методики</a>
             </div>
             <div class="flex-mobilu">
                 <svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -96,8 +122,5 @@
             </div>
         </div>
     </div>
-    <footer class="footer">
-        
-    </footer>
 </body>
 </html>

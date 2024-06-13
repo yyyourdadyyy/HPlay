@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+$isUserLoggedIn = isset($_SESSION['username']);
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -21,12 +27,18 @@
                    </a>
                 </div>
                 <div class="link-nav-login">
-                    <a class="link-nav" href="metods.html">Методики</a>
+                    <a class="link-nav" href="metods.php">Методики</a>
                     <a class="link-nav" href="task.php">Задания</a>
-                    <a class="link-nav active" href="#">Работа с детьми</a>
-                    <a class="link-nav" href="cartoons.html">Мультфильмы</a>
+                    <a class="link-nav active" href="work.php">Работа с детьми</a>
+                    <a class="link-nav" href="cartoons.php">Мультфильмы</a>
                     <div class="login">
-                        <a href="#">Войти</a>
+                    <?php
+                    if (!$isUserLoggedIn) {
+                echo '<a href="login.html" class="login-button">Войти</a>';
+            }else {
+                echo '<a href="auth/dashboard.php" class="login-button">Профиль</a>';
+            }
+            ?>
                     </div>
                 </div>
             </nav>

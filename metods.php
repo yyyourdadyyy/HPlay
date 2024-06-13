@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+$isUserLoggedIn = isset($_SESSION['username']);
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -7,55 +13,74 @@
     <link rel="stylesheet" href="style/media.css">
     <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
     <script defer src="js/app.js"></script>
-    <title>Личный профиль</title>
+    <title>Методики</title>
 </head>
 <body>
-    <header class="header header-profile-mobilu">
+    <header class="header">
         <div class="container">
             <nav class="nav">
                 <div class="logo">
                     <img src="img/logo.svg" alt="Logo">
                     <p class="logo-text">HAPPY <span>PLAYLAND</span></p>
+                    <p class="main-text-mobilu">Методики</p>
                 </div>
                 <div class="link-nav-login">
-                    <a class="link-nav" href="metods.html">Методики</a>
-                    <a class="link-nav" href="task.html">Задания</a>
-                    <a class="link-nav " href="work.html">Работа с детьми</a>
-                    <a class="link-nav" href="cartoons.html">Мультфильмы</a>
+                    <a class="link-nav active" href="metods.php">Методики</a>
+                    <a class="link-nav" href="task.php">Задания</a>
+                    <a class="link-nav" href="work.php">Работа с детьми</a>
+                    <a class="link-nav" href="cartoons.php">Мультфильмы</a>
                     <div class="login">
-                        <a href="#">Войти</a>
+                    <?php
+                    if (!$isUserLoggedIn) {
+                echo '<a href="login.html" class="login-button">Войти</a>';
+            }else {
+                echo '<a href="auth/dashboard.php" class="login-button">Профиль</a>';
+            }
+            ?>
                     </div>
                 </div>
             </nav>
         </div>
     </header>
-    <main class="main-proflle">
+    <main class="main">
         <div class="container">
-          <div class="main-profiles">
-            <div class="bg-profile-img">
-                <img src="img/cover.png" alt="bg profile">
-            </div>
-            <div class="profile-date">
-                <img src="img/avatar.png" alt="Avatar">
-                <div class="date-profiles">
-                <p class="name-date">Иванова Мария</p>
-                <p class="decr-date">Хочу стать доктором и лечить людей</p>
-                <p class="level-date">Уровень 1</p>
+            <h1 class="task-title">Методики</h1>
+            <div class="grid-container">
+                <div class="item1">
+                <img class="img-metods" src="img/icon-card-metods(2).svg.svg" alt="">
+                <p class="title-metods">Сенсорная интеграция</p>
+                <a class="link-metods" href="#">ПОДРОБНЕЕ</a>
+                </div>
+                <div class="item2">
+                    <img class="img-metods" src="img/icon-card-metods(1).svg.svg" alt="">
+                    <p class="title-metods">Иппотерапия</p>
+                    <a class="link-metods color-orange" href="metods/horse.html">ПОДРОБНЕЕ</a>
+                </div>
+                <div class="item3">
+                    <img class="img-metods item3-img" src="img/icon-card-metods(3).svg.svg" alt="">
+                    <p class="title-metods">Карточки PECS</p>
+                    <a class="link-metods color-green" href="metods/pecs.html">ПОДРОБНЕЕ</a>
+                </div>
+                <div class="item4">
+                    <img class="img-metods" src="img/icon-card-metods(4).svg" alt="">
+                    <p class="title-metods">Холдинг-терапия</p>
+                    <a class="link-metods" href="#">ПОДРОБНЕЕ</a>
+                </div>
+                <div class="item5">
+                    <img class="img-metods" src="img/icon-card-metods(5).svg" alt="">
+                    <p class="title-metods">АВА-терапия</p>
+                    <a class="link-metods color-pink" href="#">ПОДРОБНЕЕ</a>
                 </div>
             </div>
-          </div>
-          <div class="favorites-game">
-            <h2 class="favorites-title">Любимые игры</h2>
-          </div>
         </div>
     </main>
     <div class="menu-mobilu">
         <div class="inner-menu-mobilu">
             <div class="flex-mobilu">
                 <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="img-menu" d="M11 17.4L4.4 14.1V8.09998L0.200001 5.99998L11 0.599976L21.8 5.99998V13.8H20V6.89998L17.6 8.09998V14.1L11 17.4ZM11 9.37498L17.775 5.99998L11 2.62498L4.225 5.99998L11 9.37498ZM11 15.375L15.8 12.975V8.99998L11 11.4L6.2 8.99998V12.975L11 15.375Z" fill="#D9D9D9"/>
+                    <path class="img-menu active-menu" d="M11 17.4L4.4 14.1V8.09998L0.200001 5.99998L11 0.599976L21.8 5.99998V13.8H20V6.89998L17.6 8.09998V14.1L11 17.4ZM11 9.37498L17.775 5.99998L11 2.62498L4.225 5.99998L11 9.37498ZM11 15.375L15.8 12.975V8.99998L11 11.4L6.2 8.99998V12.975L11 15.375Z" fill="#D9D9D9"/>
                     </svg>
-                <a class="link-menu" href="metods.html">Методики</a>
+                <a class="link-menu active-menu" href="metods.html">Методики</a>
             </div>
             <div class="flex-mobilu">
                 <svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -77,11 +102,14 @@
             </div>
             <div class="flex-mobilu">
                 <svg  width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="img-menu active-menu" d="M11 10.5414C9.4875 10.5414 8.23086 10.0412 7.23009 9.04063C6.22955 8.03985 5.72928 6.78322 5.72928 5.27072C5.72928 3.75822 6.22955 2.50158 7.23009 1.50081C8.23086 0.500272 9.4875 0 11 0C12.5125 0 13.7691 0.500272 14.7699 1.50081C15.7704 2.50158 16.2707 3.75822 16.2707 5.27072C16.2707 6.78322 15.7704 8.03985 14.7699 9.04063C13.7691 10.0412 12.5125 10.5414 11 10.5414ZM0 21.5645V18.127C0 17.2866 0.211979 16.5513 0.635938 15.9211C1.0599 15.2909 1.61184 14.8116 2.29178 14.4832C3.78893 13.7882 5.2517 13.2668 6.68009 12.9192C8.10872 12.5715 9.54869 12.3977 11 12.3977C12.4513 12.3977 13.8874 12.5753 15.3082 12.9305C16.7291 13.2857 18.1875 13.8048 19.6835 14.4877C20.3833 14.8181 20.9443 15.2972 21.3665 15.9249C21.7888 16.5526 22 17.2866 22 18.127V21.5645H0ZM2.29178 19.2727H19.7082V18.127C19.7082 17.7986 19.6147 17.4892 19.4277 17.1988C19.2405 16.9085 19.0056 16.6908 18.723 16.5457C17.3327 15.8658 16.0225 15.3865 14.7926 15.1078C13.5629 14.8289 12.2987 14.6895 11 14.6895C9.70131 14.6895 8.42944 14.8289 7.18438 15.1078C5.93931 15.3865 4.62928 15.8658 3.25428 16.5457C2.97149 16.6908 2.74038 16.9085 2.56094 17.1988C2.3815 17.4892 2.29178 17.7986 2.29178 18.127V19.2727ZM11 8.25C11.8479 8.25 12.5564 7.96538 13.1254 7.39613C13.6947 6.82711 13.9793 6.11864 13.9793 5.27072C13.9793 4.4228 13.6947 3.71433 13.1254 3.14531C12.5564 2.57606 11.8479 2.29144 11 2.29144C10.1521 2.29144 9.44361 2.57606 8.87459 3.14531C8.30534 3.71433 8.02072 4.4228 8.02072 5.27072C8.02072 6.11864 8.30534 6.82711 8.87459 7.39613C9.44361 7.96538 10.1521 8.25 11 8.25Z" fill="#D9D9D9"/>
+                    <path class="img-menu" d="M11 10.5414C9.4875 10.5414 8.23086 10.0412 7.23009 9.04063C6.22955 8.03985 5.72928 6.78322 5.72928 5.27072C5.72928 3.75822 6.22955 2.50158 7.23009 1.50081C8.23086 0.500272 9.4875 0 11 0C12.5125 0 13.7691 0.500272 14.7699 1.50081C15.7704 2.50158 16.2707 3.75822 16.2707 5.27072C16.2707 6.78322 15.7704 8.03985 14.7699 9.04063C13.7691 10.0412 12.5125 10.5414 11 10.5414ZM0 21.5645V18.127C0 17.2866 0.211979 16.5513 0.635938 15.9211C1.0599 15.2909 1.61184 14.8116 2.29178 14.4832C3.78893 13.7882 5.2517 13.2668 6.68009 12.9192C8.10872 12.5715 9.54869 12.3977 11 12.3977C12.4513 12.3977 13.8874 12.5753 15.3082 12.9305C16.7291 13.2857 18.1875 13.8048 19.6835 14.4877C20.3833 14.8181 20.9443 15.2972 21.3665 15.9249C21.7888 16.5526 22 17.2866 22 18.127V21.5645H0ZM2.29178 19.2727H19.7082V18.127C19.7082 17.7986 19.6147 17.4892 19.4277 17.1988C19.2405 16.9085 19.0056 16.6908 18.723 16.5457C17.3327 15.8658 16.0225 15.3865 14.7926 15.1078C13.5629 14.8289 12.2987 14.6895 11 14.6895C9.70131 14.6895 8.42944 14.8289 7.18438 15.1078C5.93931 15.3865 4.62928 15.8658 3.25428 16.5457C2.97149 16.6908 2.74038 16.9085 2.56094 17.1988C2.3815 17.4892 2.29178 17.7986 2.29178 18.127V19.2727ZM11 8.25C11.8479 8.25 12.5564 7.96538 13.1254 7.39613C13.6947 6.82711 13.9793 6.11864 13.9793 5.27072C13.9793 4.4228 13.6947 3.71433 13.1254 3.14531C12.5564 2.57606 11.8479 2.29144 11 2.29144C10.1521 2.29144 9.44361 2.57606 8.87459 3.14531C8.30534 3.71433 8.02072 4.4228 8.02072 5.27072C8.02072 6.11864 8.30534 6.82711 8.87459 7.39613C9.44361 7.96538 10.1521 8.25 11 8.25Z" fill="#D9D9D9"/>
                     </svg>                    
-                <a class="link-menu active-menu" href="use.html">Профиль</a>
+                <a class="link-menu" href="use.html">Профиль</a>
             </div>
         </div>
     </div>
+    <footer class="footer">
+        
+    </footer>
 </body>
 </html>

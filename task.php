@@ -29,16 +29,16 @@ $isUserLoggedIn = isset($_SESSION['username']);
                     <p class="main-text-mobilu">Задания</p>
                 </div>
                 <div class="link-nav-login">
-                    <a class="link-nav" href="metods.html">Методики</a>
-                    <a class="link-nav active" href="task.html">Задания</a>
-                    <a class="link-nav" href="work.html">Работа с детьми</a>
-                    <a class="link-nav" href="cartoons.html">Мультфильмы</a>
+                    <a class="link-nav" href="metods.php">Методики</a>
+                    <a class="link-nav active" href="task.php">Задания</a>
+                    <a class="link-nav" href="work.php">Работа с детьми</a>
+                    <a class="link-nav" href="cartoons.php">Мультфильмы</a>
                     <div class="login">
                     <?php
                     if (!$isUserLoggedIn) {
-                echo '<a href="login.php" class="login-button">Войти</a>';
+                echo '<a href="login.html" class="login-button">Войти</a>';
             }else {
-                echo '<a href="logout.php" class="login-button">Выйти</a>';
+                echo '<a href="auth/dashboard.php" class="login-button">Профиль</a>';
             }
             ?>
                     </div>
