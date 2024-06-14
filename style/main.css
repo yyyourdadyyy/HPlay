@@ -512,9 +512,15 @@ a {
     top: 50%;
     right: 0;
     transform: translateY(-46%);
-    height: 630px;
+    height: 340px;
 }
-
+.book-frame{
+    width: 80vw;
+    height: 80vh;
+}
+.win-div{
+    height: 20vh;
+}
 .card-img-center {
     position: absolute;
     top: 50%;

@@ -56,20 +56,16 @@ $isUserLoggedIn = isset($_SESSION['username']);
                 <a class="link-task" href="game/game.php">ИГРАТЬ</a>
             </div>
             <div class="card-task">
-                <p class="title-card-task">Карандаши</p>
-                <img class="card-img-two" src="img/icon-card-task(2).svg" alt="">
-                <a class="link-task" href="#">ПОДРОБНЕЕ</a>
+                <p class="title-card-task">Учим буквы</p>
+                <img class="card-img-two" src="img/letters.svg" alt="">
+                <a class="link-task" href="game-letters/gl.php">ИГРАТЬ</a>
             </div>
             <div class="card-task">
-                <p class="title-card-task">Собери пазл</p>
-                <img class="card-img-center" src="img/icon-card-task(3).svg" alt="">
-                <a class="link-task" href="#">СОБРАТЬ</a>
+                <p class="title-card-task">Домашнее задание</p>
+                <img class="card-img-center" src="img/book.svg" alt="">
+                <a class="link-task" href="book.php">Выполнить</a>
             </div>
-            <div class="card-task">
-                <p class="title-card-task">Найди фигуры</p>
-                <img class="card-img-center" src="img/icon-card-task(4).svg" alt="" style="height: 400px;">
-                <a class="link-task" href="#">ИГРАТЬ</a>
-            </div>
+            
            </div>
         </div>
     </main>

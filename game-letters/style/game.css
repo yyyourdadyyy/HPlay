@@ -1,0 +1,44 @@
+.letter {
+    font-size: 50vh;
+    width: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.image-container img {
+    height: 60vh;
+    max-width: 40vw;
+ 
+
+}
+.game-container {
+    border-radius: 3vh;
+    height: 60vh;
+    max-width: 1700px;
+    margin: 3vh auto;
+    display: flex;
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+}
+.button-container{
+    height: 10vh;
+    max-width: 1700px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.button-container .next{
+    background: #FBAE17;
+    color: #fff;
+    margin-top: 3vh;
+    width: 15vw;
+    border: none;
+    border-radius: 5vh;
+    font-size: 5vh;
+}
