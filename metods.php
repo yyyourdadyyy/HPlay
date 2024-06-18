@@ -49,7 +49,7 @@ $isUserLoggedIn = isset($_SESSION['username']);
                 <div class="item1">
                 <img class="img-metods" src="img/icon-card-metods(2).svg.svg" alt="">
                 <p class="title-metods">Сенсорная интеграция</p>
-                <a class="link-metods" href="metods/horse.html">ПОДРОБНЕЕ</a>
+                <a class="link-metods" href="metods/sense.html">ПОДРОБНЕЕ</a>
                 </div>
                 <div class="item2">
                     <img class="img-metods" src="img/icon-card-metods(1).svg.svg" alt="">
@@ -64,12 +64,12 @@ $isUserLoggedIn = isset($_SESSION['username']);
                 <div class="item4">
                     <img class="img-metods" src="img/icon-card-metods(4).svg" alt="">
                     <p class="title-metods">Холдинг-терапия</p>
-                    <a class="link-metods" href="metods/pecs.html">ПОДРОБНЕЕ</a>
+                    <a class="link-metods" href="metods/holding.html">ПОДРОБНЕЕ</a>
                 </div>
                 <div class="item5">
                     <img class="img-metods" src="img/icon-card-metods(5).svg" alt="">
                     <p class="title-metods">АВА-терапия</p>
-                    <a class="link-metods color-pink" href="metods/horse.html">ПОДРОБНЕЕ</a>
+                    <a class="link-metods color-pink" href="metods/aba.html">ПОДРОБНЕЕ</a>
                 </div>
             </div>
         </div>
